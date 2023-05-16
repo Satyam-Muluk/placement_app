@@ -53,6 +53,7 @@
               <div class="accordion-body d-flex flex-column">
                 <table class="table table-striped border">
                   <tbody>
+                    <%if(student) {%>
                     <tr>
                       <td>Name</td>
                       <td><%= student.name %></td>
@@ -85,6 +86,7 @@
                       <td>React score</td>
                       <td><%= student.react_score %></td>
                     </tr>
+                    <!-- <%else %> -->
                   </tbody>
                 </table>
                 <div class="d-flex justify-content-around" style="width: 100%">
