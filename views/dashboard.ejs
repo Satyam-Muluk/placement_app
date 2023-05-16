@@ -53,7 +53,7 @@
               <div class="accordion-body d-flex flex-column">
                 <table class="table table-striped border">
                   <tbody>
-                    <%if(student) {%>
+                    <% if(student) {%>
                     <tr>
                       <td>Name</td>
                       <td><%= student.name %></td>
@@ -86,7 +86,7 @@
                       <td>React score</td>
                       <td><%= student.react_score %></td>
                     </tr>
-                  
+                  <%}%>
                   </tbody>
                 </table>
                 <div class="d-flex justify-content-around" style="width: 100%">
@@ -198,27 +198,40 @@
                     style="width: 100%"
                   >
                     <table class="table">
+                      
                       <tbody>
+                       
                         <tr>
+                          <% if(i.student){%>
                           <td>Name</td>
                           <td><%= i.student.name %></td>
+                          <%}%>
                         </tr>
                         <tr>
+                          <% if(i.student){%>
                           <td>Email</td>
                           <td><%= i.student.email %></td>
+                          <%}%>
                         </tr>
                         <tr>
+                          <% if(i.result){%>
                           <td>Result</td>
                           <td><%= i.result %></td>
+                          <%}%>
                         </tr>
+                     
+                       
                       </tbody>
+                    
                     </table>
                     <a
+                      <% if(i.student){%>
                       href="/interview/deallocate/<%= i.student.id %>/<%= interview.id %>"
                       class="btn btn-danger ms-2 mb-2"
                       style="width: 40%"
                       >Delete</a
                     >
+                    <%}%>
                   </div>
 
                   <%} %>
